@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/memomint/static/css/main.7c13f41d.css",
+    "main.js": "/memomint/static/js/main.d4898e95.js",
+    "static/js/453.54292a4b.chunk.js": "/memomint/static/js/453.54292a4b.chunk.js",
+    "index.html": "/memomint/index.html",
+    "main.7c13f41d.css.map": "/memomint/static/css/main.7c13f41d.css.map",
+    "main.d4898e95.js.map": "/memomint/static/js/main.d4898e95.js.map",
+    "453.54292a4b.chunk.js.map": "/memomint/static/js/453.54292a4b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c13f41d.css",
+    "static/js/main.d4898e95.js"
+  ]
+}
