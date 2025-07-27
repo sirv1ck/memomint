@@ -6,7 +6,7 @@ import {
   SystemProgram, 
   LAMPORTS_PER_SOL 
 } from '@solana/web3.js';
-import { MemoProgram } from '@solana/spl-memo';
+import { MEMO_PROGRAM_ID } from '@solana/spl-memo';
 
 /**
  * Sends a memo to the Solana blockchain
@@ -29,7 +29,7 @@ export const sendMemo = async (memoText, walletPublicKey, signTransaction) => {
   // Create a memo instruction
   const instruction = new TransactionInstruction({
     keys: [{ pubkey: walletPublicKey, isSigner: true, isWritable: true }],
-    programId: MemoProgram.programId,
+    programId: MEMO_PROGRAM_ID,
     data: Buffer.from(memoText, 'utf-8'),
   });
 
@@ -90,12 +90,12 @@ export const fetchMemos = async (walletPublicKey, connection) => {
       .filter(tx => 
         tx && 
         tx.transaction.message.instructions.some(
-          instruction => instruction.programId.equals(MemoProgram.programId)
+          instruction => instruction.programId.equals(MEMO_PROGRAM_ID)
         )
       )
       .map(tx => {
         const memoInstruction = tx.transaction.message.instructions.find(
-          instruction => instruction.programId.equals(MemoProgram.programId)
+          instruction => instruction.programId.equals(MEMO_PROGRAM_ID)
         );
         
         if (!memoInstruction || !memoInstruction.data) {
